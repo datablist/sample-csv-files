@@ -26,6 +26,9 @@ def long_text():
 def product_name():
     return fake.text(max_nb_chars=30)
 
+def username():
+    return fake.user_name()
+
 def full_name():
     return "{} {}".format(fake.first_name(), fake.last_name())
 
@@ -55,6 +58,85 @@ def department():
         "Security Department",
         "Administration department"
     ])
+
+def deal_stage():
+    values = [
+        "New Lead",
+        "Contacted",
+        "Qualified",
+        "Proposal Sent",
+        "Negotiation",
+        "Closed Won",
+        "Closed Lost",
+        "Re-engagement",
+        "On Hold",
+        "Disqualified",
+    ]
+    return random.choice(values)
+
+def deal_source():
+    values = [
+        "Website Form",
+        "Cold Email",
+        "Cold Call", 
+        "Referral",
+        "Social Media",
+        "LinkedIn Outreach",
+        "Google Ads",
+        "Facebook Ads", 
+        "Organic Search (SEO)",
+        "Content Marketing",
+        "Webinars",
+        "Trade Show",
+        "Networking Event",
+        "Purchased List",
+        "Partner Program",
+        "Chatbot",
+        "Direct Traffic",
+        "Retargeting Ads",
+        "Podcast",
+        "Other"
+    ]
+    return random.choice(values)
+
+def product_category():
+    values = [
+        "Clothing & Apparel",
+        "Home & Kitchen", 
+        "Beauty & Personal Care",
+        "Health & Wellness",
+        "Sports & Outdoors",
+        "Toys & Games",
+        "Automotive",
+        "Books & Stationery",
+        "Office Supplies",
+        "Smartphones",
+        "Laptops & Computers",
+        "Smartwatches",
+        "Headphones & Earbuds",
+        "Cameras & Accessories",
+        "Men's Clothing",
+        "Women's Clothing",
+        "Kids' Clothing",
+        "Shoes & Footwear",
+        "Accessories (Bags, Hats, Belts)",
+        "Furniture",
+        "Kitchen Appliances",
+        "Bedding & Bath",
+        "Home Decor",
+        "Cleaning Supplies",
+        "Skincare",
+        "Haircare",
+        "Makeup",
+        "Fragrances",
+        "Grooming Tools",
+        "Fitness Equipment",
+        "Camping & Hiking",
+        "Cycling",
+        "Team Sports",
+        "Fishing & Hunting"
+    ]
+    return random.choice(values)
 
 def industry():
     # https://gist.github.com/mbejda/19012b99a12e9d014389
@@ -211,6 +293,7 @@ TYPES_TO_GENERATORS = {
     'first_name': fake.first_name,
     'last_name': fake.last_name,
     'full_name': full_name, # fake.name,
+    'username': username,
     'company': fake.company,
     'industry': industry,
     'business_department': department,
@@ -229,6 +312,9 @@ TYPES_TO_GENERATORS = {
     'small_positive_integer': small_positive_integer,
     'positive_integer': positive_integer,
     'product_name': product_name,
+    'product_category': product_category,
+    'deal_stage': deal_stage,
+    'deal_source': deal_source,
     'date': fake.date,
     'year': fake.year,
     'datetime': fake.date_time,
