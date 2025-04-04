@@ -60,9 +60,7 @@ def add_small_variation_to_duplicates(row: List, schema: str) -> List:
     # Add a small variation to the Website
     website = new_row[website_index]
     if lucky_number == 3:
-        if "www" in website:
-            website = website.replace("www.", "")
-        elif "https" in website:
+        if "https" in website:
             website = website.replace("https", "http")
         elif "http" in website:
             website = website.replace("http", "https")
@@ -191,6 +189,7 @@ if __name__ == '__main__':
 
     # With Duplicates
     generate_file('leads', 'leads-10000', 10000, 0.4)
+    generate_file('leads', 'leads-100000', 10000, 0.4)
 
     generate_file('people', 'people-100', 100)
     generate_file('people', 'people-1000', 1000)
