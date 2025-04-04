@@ -81,8 +81,56 @@ The datasets are generated using random values. Mosly using Python [Faker](https
 - Industry
 - Number of employees
 
+## Leads CSV Samples
+
+- [leads-100.csv](https://drive.google.com/uc?id=1lGNKLeKjS7n03JrEgtiGsw6hUMbdnOO5&export=download) - [Zip version](https://drive.google.com/uc?id=1v4cIPFyS38utm2LG3wr1Lj7czfgK0x7i&export=download) - Leads CSV with 100 records
+- [leads-1000.csv](https://drive.google.com/uc?id=1oRXTuvdsZ0HKcpVzV7I5I9-BYKheR1RM&export=download) - [Zip version](https://drive.google.com/uc?id=1EXby0tTtKWN_V75z7ezVuVHnPr99_oIV&export=download) - Leads CSV with 1000 records
+- [leads-10000.csv](https://drive.google.com/uc?id=1IHpMYaUbCwOjzVANMm818FlFG0u3-9iC&export=download) - [Zip version](https://drive.google.com/uc?id=1BKpNWE1NcKTl7rN-52o83nZbTX3sqX9E&export=download) - Leads CSV with 10000 records
+- [leads-100000.csv](https://drive.google.com/uc?id=1mCFMwc_Y0nU8G99-AUznqqBvh6t2Kg8B&export=download) - [Zip version](https://drive.google.com/uc?id=1qW9jbDnlFzxVr8QbYipEohvvSAj6yXSi&export=download) - Leads CSV with 100000 records
 
 
+### Lead Schema
+
+- Index
+- Account Id
+- Lead Owner
+- First Name
+- Last Name
+- Company
+- Phone 1
+- Phone 2
+- Email 1
+- Email 2
+- Website
+- Source
+- Deal Stage
+- Notes
+
+
+## Products CSV Samples
+
+- [products-100.csv](https://drive.google.com/uc?id=107Sqmt1sk6oGcKL_TwNVqz5wMJBavsoq&export=download) - [Zip version](https://drive.google.com/uc?id=1QelGM4sjuCbLQ8eJBkHuagsDyQZm5YKC&export=download) - Products CSV with 100 records
+- [products-1000.csv](https://drive.google.com/uc?id=1aZNLCVO0VoHmvPNvSC2teeFmZfiViE6u&export=download) - [Zip version](https://drive.google.com/uc?id=1uyd43hna_IVm6ZitUBLty5-GVUSGfMVK&export=download) - Products CSV with 1000 records
+- [products-10000.csv](https://drive.google.com/uc?id=1BE-dfkrb6oyLKDuqXAq2fDYMkDz2f9hM&export=download) - [Zip version](https://drive.google.com/uc?id=1MOB6cYB3GtzU88lf4XKqNEJMl2HRYrZd&export=download) - Products CSV with 10000 records
+- [products-100000.csv](https://drive.google.com/uc?id=1xkWZDg0qDEsDBDeSg7VSn5YcCLxQTmin&export=download) - [Zip version](https://drive.google.com/uc?id=103kKeLAlkdgn1oysubJPU7vnE0x0x58a&export=download) - Products CSV with 100000 records
+- [products-1000000.csv](https://drive.google.com/uc?id=1u5t7wfkWDW4W2TYJDuh1m0pa-7E0_Sr3&export=download) - [Zip version](https://drive.google.com/uc?id=1kAyOE06v069e-i9XA45Y2kHJpNAMqZiJ&export=download) - Products CSV with 1000000 records
+- [products-2000000.csv](https://drive.google.com/uc?id=18BLAZDeH74Ll3b4GsMNY3s-YVnNmWblC&export=download) - [Zip version](https://drive.google.com/uc?id=1LU_DT7j5YjTMnNHeI0VSTWMsHveSRpoz&export=download) - Products CSV with 2000000 records
+
+### Products Schema
+
+- Index
+- Name
+- Description
+- Brand
+- Category
+- Price
+- Currency
+- Stock
+- EAN
+- Color
+- Size
+- Availability
+- Internal ID
 
 ## Local Set up to generate files
 

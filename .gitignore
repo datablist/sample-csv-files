@@ -141,6 +141,7 @@ cython_debug/
 .DS_Store
 
 # Dont track big csv files
+files/
 *500000.csv
 *1000000.csv
 *2000000.csv

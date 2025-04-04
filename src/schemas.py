@@ -57,11 +57,20 @@ LEADS_SCHEMA =[{
     "name": "Phone 2",
     "type": "phone"
 }, {
-    "name": "Email",
+    "name": "Email 1",
+    "type": "business_email"
+}, {
+    "name": "Email 2",
     "type": "business_email"
 }, {
     "name": "Website",
     "type": "website"
+}, {
+    "name": "Source",
+    "type": "deal_source"
+}, {
+    "name": "Deal Stage",
+    "type": "deal_stage"
 }, {
     "name": "Notes",
     "type": "long_text"
@@ -124,8 +133,35 @@ PRODUCTS_SCHEMA = [{
     "name": "Name",
     "type": "product_name"
 }, {
+    "name": "Description",
+    "type": "long_text"
+}, {
+    "name": "Brand",
+    "type": "company"
+}, {
+    "name": "Category",
+    "type": "product_category"
+}, {
+    "name": "Price",
+    "type": "positive_integer"
+}, {
+    "name": "Currency",
+    "type": "currency"
+}, {
+    "name": "Stock",
+    "type": "positive_integer"
+}, {
     "name": "EAN",
     "type": "ean"
+}, {
+    "name": "Color",
+    "type": "color"
+}, {
+    "name": "Size",
+    "type": "size"
+}, {
+    'name': 'Availability',
+    'type': 'availability'
 }, {
     "name": "Internal ID",
     "type": "small_positive_integer"
