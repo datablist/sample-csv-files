@@ -1,8 +1,13 @@
 import random
 import string
+import json
+from pathlib import Path
 from faker import Faker
 
 fake = Faker(use_weighting=False)
+product_names_json = Path(__file__).parent / "data/product_names.json"
+with open(product_names_json, "r") as f:
+    product_names = json.load(f)
 
 def random_string(len=15):
     lst =  [random.choice(string.hexdigits) for n in range(len)]
@@ -23,9 +28,6 @@ def number_employees():
 def long_text():
     return fake.paragraph(nb_sentences=1)
 
-def product_name():
-    return fake.text(max_nb_chars=30)
-
 def username():
     return fake.user_name()
 
@@ -34,6 +36,9 @@ def full_name():
 
 def sex():
     return random.choice(['Male', 'Female'])
+
+def brand():
+    return fake.company()
 
 def department():
     # https://www.quora.com/What-are-the-main-departments-in-a-company
@@ -73,6 +78,58 @@ def deal_stage():
         "Disqualified",
     ]
     return random.choice(values)
+
+def color():
+    return fake.color_name()
+
+def size():
+    clothing_sizes = ["XS", "S", "M", "L", "XL", "XXL"]
+    generic_sizes = ["Small", "Medium", "Large", "Extra Large"]
+    dimensions = [
+        "10x10 cm", "15x20 cm", "30x40 cm", "50x70 cm",
+        "100x200 mm", "5x7 in", "8x10 in", "12x18 in"
+    ]
+    
+    size_pool = clothing_sizes + generic_sizes + dimensions
+    return random.choice(size_pool)
+
+def availability():
+    statuses = [
+        "in_stock",
+        "out_of_stock",
+        "pre_order",
+        "discontinued",
+        "limited_stock",
+        "backorder"
+    ]
+    return random.choice(statuses)
+
+def product_name():
+    adjectives = [
+        "Smart", "Ultra", "Eco", "Wireless", "Portable", "Pro", "Mini", "Advanced", "Digital",
+        "Compact", "Premium", "Rechargeable", "Smart", "Fast", "Silent", "Clean", "Automatic"
+    ]
+    
+    extra = [
+        "Max", "X", "Go", "One", "360", "Plus", "Edge", "Prime", "Lite", "Air", "Touch", "Sense"
+    ]
+    
+    word_count = random.randint(1, 5)
+    name_parts = []
+
+    if word_count >= 2:
+        name_parts.append(random.choice(adjectives))
+        name_parts.append(random.choice(product_names))
+        word_count -= 2
+    else:
+        name_parts.append(random.choice(product_names))
+        word_count -= 1
+
+    for _ in range(word_count):
+        name_parts.append(random.choice(extra + adjectives))
+
+    return " ".join(name_parts)
+
 
 def deal_source():
     values = [
@@ -137,6 +194,9 @@ def product_category():
         "Fishing & Hunting"
     ]
     return random.choice(values)
+
+def currency():
+    return 'USD'
 
 def industry():
     # https://gist.github.com/mbejda/19012b99a12e9d014389
@@ -305,6 +365,10 @@ TYPES_TO_GENERATORS = {
     'ean': fake.ean,
     'url': fake.url,
     'email': fake.email,
+    'currency': currency,
+    'availability': availability,
+    'size': size,
+    'color': color,
     'business_email': fake.company_email,
     'website': fake.url,
     'job': fake.job,
@@ -312,6 +376,7 @@ TYPES_TO_GENERATORS = {
     'small_positive_integer': small_positive_integer,
     'positive_integer': positive_integer,
     'product_name': product_name,
+    'brand': brand,
     'product_category': product_category,
     'deal_stage': deal_stage,
     'deal_source': deal_source,

@@ -136,11 +136,32 @@ PRODUCTS_SCHEMA = [{
     "name": "Description",
     "type": "long_text"
 }, {
-    "name": "EAN",
-    "type": "ean"
+    "name": "Brand",
+    "type": "company"
 }, {
     "name": "Category",
     "type": "product_category"
+}, {
+    "name": "Price",
+    "type": "positive_integer"
+}, {
+    "name": "Currency",
+    "type": "currency"
+}, {
+    "name": "Stock",
+    "type": "positive_integer"
+}, {
+    "name": "EAN",
+    "type": "ean"
+}, {
+    "name": "Color",
+    "type": "color"
+}, {
+    "name": "Size",
+    "type": "size"
+}, {
+    'name': 'Availability',
+    'type': 'availability'
 }, {
     "name": "Internal ID",
     "type": "small_positive_integer"

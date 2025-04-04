@@ -81,7 +81,30 @@ The datasets are generated using random values. Mosly using Python [Faker](https
 - Industry
 - Number of employees
 
+### Leads CSV Samples
 
+- [leads-100.csv](https://drive.google.com/uc?id=1lGNKLeKjS7n03JrEgtiGsw6hUMbdnOO5&export=download) - [Zip version](https://drive.google.com/uc?id=1v4cIPFyS38utm2LG3wr1Lj7czfgK0x7i&export=download) - Leads CSV with 100 records
+- [leads-1000.csv](https://drive.google.com/uc?id=1oRXTuvdsZ0HKcpVzV7I5I9-BYKheR1RM&export=download) - [Zip version](https://drive.google.com/uc?id=1EXby0tTtKWN_V75z7ezVuVHnPr99_oIV&export=download) - Leads CSV with 1000 records
+- [leads-10000.csv](https://drive.google.com/uc?id=1IHpMYaUbCwOjzVANMm818FlFG0u3-9iC&export=download) - [Zip version](https://drive.google.com/uc?id=1BKpNWE1NcKTl7rN-52o83nZbTX3sqX9E&export=download) - Leads CSV with 10000 records
+- [leads-100000.csv](https://drive.google.com/uc?id=1mCFMwc_Y0nU8G99-AUznqqBvh6t2Kg8B&export=download) - [Zip version](https://drive.google.com/uc?id=1qW9jbDnlFzxVr8QbYipEohvvSAj6yXSi&export=download) - Leads CSV with 100000 records
+
+
+### Lead Schema
+
+- Index
+- Account Id
+- Lead Owner
+- First Name
+- Last Name
+- Company
+- Phone 1
+- Phone 2
+- Email 1
+- Email 2
+- Website
+- Source
+- Deal Stage
+- Notes
 
 
 ## Local Set up to generate files
