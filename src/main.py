@@ -134,9 +134,14 @@ def generate_file(
 
             # Content
             data_generators = [TYPES_TO_GENERATORS[elem['type']] for elem in schema_dict]
+            unique_fields = [elem.get('unique', False) for elem in schema_dict]
             rows = []
             generated_rows = []
-
+            generated_unique_values = {}
+            for index, gen in enumerate(data_generators):
+                if unique_fields[index]:
+                    generated_unique_values[index] = set()
+            
             for index in range(1, count+1):
                 random_pick = random.random()
                 add_randomness = random_pick < duplicate_ratio
@@ -145,8 +150,17 @@ def generate_file(
                     row = [index] + row[1:]  # Keep a unique index
                     row = add_small_variation_to_duplicates(row, schema)
                 else:
-                    row = [gen() for gen in data_generators]
-                    row.insert(0, index)
+                    row = [index]
+                    for index, gen in enumerate(data_generators):
+                        gen_value = gen()
+                        if unique_fields[index]:
+                            # Find a new unique value
+                            while gen_value in generated_unique_values[index]:
+                                gen_value = gen()
+
+                            generated_unique_values[index].add(gen_value)
+                        
+                        row.append(gen_value)
 
                     generated_rows.append(row)
                 
@@ -169,8 +183,6 @@ def generate_file(
     if not file_path_zip.exists():
         with ZipFile(file_path_zip, 'w', ZIP_BZIP2) as zipObj:
             zipObj.write(filename=file_path, arcname=file_name)
-
-
 
 
 if __name__ == '__main__':

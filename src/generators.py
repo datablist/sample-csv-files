@@ -1,6 +1,7 @@
 import random
 import string
 import json
+import secrets
 from pathlib import Path
 from faker import Faker
 
@@ -9,9 +10,9 @@ product_names_json = Path(__file__).parent / "data/product_names.json"
 with open(product_names_json, "r") as f:
     product_names = json.load(f)
 
-def random_string(len=15):
-    lst =  [random.choice(string.hexdigits) for n in range(len)]
-    return "".join(lst)
+def random_string(string_length: int = 10) -> str:
+    alphabet = string.ascii_letters + string.digits
+    return ''.join(secrets.choice(alphabet) for i in range(string_length))
 
 def number():
     return random.randrange(-1000, 1000)

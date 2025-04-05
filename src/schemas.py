@@ -1,8 +1,14 @@
+from typing import Dict, TypedDict, List, Literal, Tuple
 
+class SchemaField(TypedDict):
+    name: str
+    type: str
+    unique: bool
 
-CUSTOMERS_SCHEMA = [{
+CUSTOMERS_SCHEMA: List[SchemaField] = [{
     "name": "Customer Id",
-    "type": 'id'
+    "type": 'id',
+    "unique": True
 }, {
     "name": "First Name",
     "type": 'first_name'
@@ -26,7 +32,8 @@ CUSTOMERS_SCHEMA = [{
     "type": "phone"
 }, {
     "name": "Email",
-    "type": "business_email"
+    "type": "business_email",
+    "unique": True
 }, {
     "name": "Subscription Date",
     "type": "date_this_decade"
@@ -37,7 +44,8 @@ CUSTOMERS_SCHEMA = [{
 
 LEADS_SCHEMA =[{
     "name": "Account Id",
-    "type": 'id'
+    "type": 'id',
+    "unique": True
 }, {
     "name": "Lead Owner",
     "type": 'full_name'
@@ -78,7 +86,8 @@ LEADS_SCHEMA =[{
 
 PEOPLE_SCHEMA = [{
     "name": "User Id",
-    "type": 'id'
+    "type": 'id',
+    "unique": True
 }, {
     "name": "First Name",
     "type": 'first_name'
@@ -90,7 +99,8 @@ PEOPLE_SCHEMA = [{
     "type": "sex"
 }, {
     "name": "Email",
-    "type": "email"
+    "type": "email",
+    "unique": True
 }, {
     "name": "Phone",
     "type": "phone"
@@ -104,7 +114,8 @@ PEOPLE_SCHEMA = [{
 
 ORGANIZATIONS_SCHEMA = [{
     "name": "Organization Id",
-    "type": 'id'
+    "type": 'id',
+    "unique": True
 }, {
     "name": "Name",
     "type": "company"
@@ -152,7 +163,8 @@ PRODUCTS_SCHEMA = [{
     "type": "positive_integer"
 }, {
     "name": "EAN",
-    "type": "ean"
+    "type": "ean",
+    "unique": True
 }, {
     "name": "Color",
     "type": "color"
@@ -164,15 +176,18 @@ PRODUCTS_SCHEMA = [{
     'type': 'availability'
 }, {
     "name": "Internal ID",
-    "type": "small_positive_integer"
+    "type": "id",
+    "unique": True
 }]
 
 OFFERS_SCHEMA = [{
     "name": "EAN",
-    "type": "ean"
+    "type": "ean",
+    "unique": True
 }, {
     "name": "Internal ID",
-    "type": "small_positive_integer"
+    "type": "id",
+    "unique": True
 }, {
     "name": "Stock",
     "type": "positive_integer"
