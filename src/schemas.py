@@ -137,6 +137,9 @@ ORGANIZATIONS_SCHEMA = [{
 }, {
     "name": "Number of employees",
     "type": "company_number_employees"
+}, {
+    "name": "UpdatedAt",
+    "type": "datetime",
 }]
 
 
@@ -174,6 +177,10 @@ PRODUCTS_SCHEMA = [{
 }, {
     'name': 'Availability',
     'type': 'availability'
+}, {
+    "name": "Added Date",
+    "type": "date",
+    "unique": False
 }, {
     "name": "Internal ID",
     "type": "id",

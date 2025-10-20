@@ -21,7 +21,7 @@ def small_positive_integer():
     return random.randrange(1, 100)
 
 def positive_integer():
-    return random.randrange(1, 1000)
+    return random.randrange(10, 1000)
 
 def number_employees():
     return random.randrange(1, 10000)
