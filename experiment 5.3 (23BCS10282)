@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Commerce Catalog</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #222;
+  }
+  .category {
+    background: #fff;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .category h2 {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 5px;
+  }
+  .product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 15px 0;
+    background: #fafafa;
+  }
+  .product h3 {
+    margin: 0;
+    color: #333;
+  }
+  .product p {
+    margin: 5px 0;
+    color: #555;
+  }
+  .reviews {
+    margin-top: 10px;
+    background: #f0f8ff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .review {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+  }
+  .review:last-child {
+    border-bottom: none;
+  }
+  .rating {
+    color: #f39c12;
+  }
+</style>
+</head>
+<body>
+
+<h1>🛒 E-Commerce Catalog</h1>
+<div id="catalog"></div>
+
+<script>
+// Sample nested data (Category → Products → Reviews)
+const catalog = [
+  {
+    categoryName: "Electronics",
+    description: "Latest electronic gadgets and accessories.",
+    products: [
+      {
+        name: "Smartphone",
+        description: "5G smartphone with AMOLED display and 128GB storage.",
+        price: 49999,
+        brand: "OnePlus",
+        reviews: [
+          { user: "Kamal Kaur", rating: 5, comment: "Excellent phone with great performance!" },
+          { user: "Rahul Sharma", rating: 4, comment: "Camera is good but battery could be better." }
+        ]
+      },
+      {
+        name: "Wireless Earbuds",
+        description: "Noise-cancelling Bluetooth earbuds with charging case.",
+        price: 5999,
+        brand: "Boat",
+        reviews: [
+          { user: "Neha Verma", rating: 5, comment: "Amazing sound quality and battery life!" }
+        ]
+      }
+    ]
+  },
+  {
+    categoryName: "Fashion",
+    description: "Trendy clothing and accessories for men and women.",
+    products: [
+      {
+        name: "Denim Jacket",
+        description: "Unisex blue denim jacket with comfortable fit.",
+        price: 2499,
+        brand: "Levi's",
+        reviews: [
+          { user: "Amit Kumar", rating: 5, comment: "Looks stylish and fits perfectly!" },
+          { user: "Riya Singh", rating: 4, comment: "Material is good, but a bit pricey." }
+        ]
+      }
+    ]
+  }
+];
+
+// Render catalog dynamically
+const container = document.getElementById("catalog");
+
+catalog.forEach(category => {
+  const catDiv = document.createElement("div");
+  catDiv.className = "category";
+  catDiv.innerHTML = `<h2>${category.categoryName}</h2><p>${category.description}</p>`;
+
+  category.products.forEach(product => {
+    const prodDiv = document.createElement("div");
+    prodDiv.className = "product";
+    prodDiv.innerHTML = `
+      <h3>${product.name}</h3>
+      <p><strong>Brand:</strong> ${product.brand}</p>
+      <p><strong>Price:</strong> ₹${product.price}</p>
+      <p>${product.description}</p>
+      <div class="reviews">
+        <strong>Reviews:</strong>
+        ${product.reviews.map(r => `
+          <div class="review">
+            <p><strong>${r.user}</strong> <span class="rating">★${r.rating}</span></p>
+            <p>${r.comment}</p>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    catDiv.appendChild(prodDiv);
+  });
+
+  container.appendChild(catDiv);
+});
+</script>
+
+</body>
+</html>
