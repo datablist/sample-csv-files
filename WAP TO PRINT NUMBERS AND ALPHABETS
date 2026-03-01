@@ -1,0 +1,38 @@
+#include <iostream>
+
+int main() {
+    // Print numbers
+    std::cout << "Numbers: ";
+    for (int i = 0; i < 10; ++i) {
+        std::cout << i << " ";
+    }
+    std::cout << std::endl;
+
+    // Print alphabets
+    std::cout << "Alphabets: ";
+    for (char c = 'A'; c <= 'Z'; ++c) {
+        std::cout << c << " ";
+    }
+    for (char c = 'a'; c <= 'z'; ++c) {
+        std::cout << c << " ";
+    }
+    std::cout << std::endl;
+
+    // Print special characters
+    std::cout << "Special characters: ";
+    for (char c = '!'; c <= '/'; ++c) {
+        std::cout << c << " ";
+    }
+    for (char c = ':'; c <= '@'; ++c) {
+        std::cout << c << " ";
+    }
+    for (char c = '['; c <= '`'; ++c) {
+        std::cout << c << " ";
+    }
+    for (char c = '{'; c <= '~'; ++c) {
+        std::cout << c << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
