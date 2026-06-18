@@ -12,7 +12,8 @@ from schemas import (
     ORGANIZATIONS_SCHEMA,
     PRODUCTS_SCHEMA,
     OFFERS_SCHEMA,
-    LEADS_SCHEMA
+    LEADS_SCHEMA,
+    ENTERPRISE_CUSTOMERS_SCHEMA
 )
 
 SCHEMA_TO_DICT = {
@@ -21,7 +22,8 @@ SCHEMA_TO_DICT = {
     'people': PEOPLE_SCHEMA,
     'organizations': ORGANIZATIONS_SCHEMA,
     'products': PRODUCTS_SCHEMA,
-    'offers': OFFERS_SCHEMA
+    'offers': OFFERS_SCHEMA,
+    'enterprise_customers': ENTERPRISE_CUSTOMERS_SCHEMA
 }
 
 def find_index(list_values: List[Dict], name: str) -> int:
@@ -250,7 +252,6 @@ if __name__ == '__main__':
     # generate_file('customers', 'customers-100000', 100000)
     # generate_file('customers', 'customers-500000', 500000)
     # generate_file('customers', 'customers-1000000', 1000000)
-    # generate_file('customers', 'customers-2000000', 2000000)
 
     # generate_file('leads', 'leads-100', 100)
     # generate_file('leads', 'leads-1000', 1000)
@@ -272,7 +273,7 @@ if __name__ == '__main__':
     # generate_file('organizations', 'organizations-100', 100)
     # generate_file('organizations', 'organizations-1000', 1000)
     # generate_file('organizations', 'organizations-10000', 10000)
-    generate_file('organizations', 'organizations-10000', 10000, 0.3)
+    # generate_file('organizations', 'organizations-10000', 10000, 0.3)
     # generate_file('organizations', 'organizations-100000', 100000)
     # generate_file('organizations', 'organizations-500000', 500000)
     # generate_file('organizations', 'organizations-1000000', 1000000)
@@ -281,11 +282,13 @@ if __name__ == '__main__':
     # generate_file('products', 'products-100', 100)
     # generate_file('products', 'products-1000', 1000)
     # generate_file('products', 'products-10000', 10000)
-    generate_file('products', 'products-10000', 10000, 0.5)
     # generate_file('products', 'products-100000', 100000)
     # generate_file('products', 'products-500000', 500000)
     # generate_file('products', 'products-1000000', 1000000)
     # generate_file('products', 'products-2000000', 2000000)
+
+    # # With Duplicates
+    # generate_file('products', 'products-10000', 10000, 0.5)
 
     # generate_file('offers', 'offers-100', 100)
     # generate_file('offers', 'offers-1000', 1000)
@@ -294,3 +297,7 @@ if __name__ == '__main__':
     # generate_file('offers', 'offers-500000', 500000)
     # generate_file('offers', 'offers-1000000', 1000000)
     # generate_file('offers', 'offers-2000000', 2000000)
+
+
+    # generate_file('enterprise_customers', 'enterprise-customers-100000', 100000)
+    generate_file('enterprise_customers', 'enterprise-customers-500000', 500000)

@@ -29,6 +29,14 @@ def number_employees():
 def long_text():
     return fake.paragraph(nb_sentences=1)
 
+
+_very_long_text_cache = []
+def very_long_text() -> str:
+    if not _very_long_text_cache:
+        for _ in range(20):
+            _very_long_text_cache.append(fake.paragraph(nb_sentences=30))
+    return random.choice(_very_long_text_cache)
+
 def username():
     return fake.user_name()
 
@@ -387,6 +395,7 @@ TYPES_TO_GENERATORS = {
     'date_this_decade': fake.date_this_decade,
     'date_of_birth': fake.date_of_birth,
     'long_text': long_text,
+    'very_long_text': very_long_text,
     'address': fake.address,
     'phone': fake.phone_number
 }

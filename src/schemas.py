@@ -202,3 +202,109 @@ OFFERS_SCHEMA = [{
     "name": "Price",
     "type": "positive_integer"
 }]
+
+ENTERPRISE_CUSTOMERS_SCHEMA: List[SchemaField] = [{
+    "name": "Customer ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Company Name",
+    "type": "company"
+}, {
+    "name": "Primary Contact First Name",
+    "type": "first_name"
+}, {
+    "name": "Primary Contact Last Name",
+    "type": "last_name"
+}, {
+    "name": "Secondary Contact First Name",
+    "type": "first_name"
+}, {
+    "name": "Secondary Contact Last Name",
+    "type": "last_name"
+}, {
+    "name": "Email Primary",
+    "type": "business_email",
+    "unique": True
+}, {
+    "name": "Email Secondary",
+    "type": "business_email"
+}, {
+    "name": "Phone Primary",
+    "type": "phone"
+}, {
+    "name": "Phone Secondary",
+    "type": "phone"
+}, {
+    "name": "Website",
+    "type": "website"
+}, {
+    "name": "Industry",
+    "type": "industry"
+}, {
+    "name": "Company Description",
+    "type": "very_long_text"
+}, {
+    "name": "Number of Employees",
+    "type": "company_number_employees"
+}, {
+    "name": "Annual Revenue",
+    "type": "positive_integer"
+}, {
+    "name": "Address",
+    "type": "address"
+}, {
+    "name": "City",
+    "type": "city"
+}, {
+    "name": "Country",
+    "type": "country"
+}, {
+    "name": "Account Manager",
+    "type": "full_name"
+}, {
+    "name": "Department",
+    "type": "business_department"
+}, {
+    "name": "Contract Start Date",
+    "type": "date_this_decade"
+}, {
+    "name": "Contract End Date",
+    "type": "date"
+}, {
+    "name": "Contract Value",
+    "type": "positive_integer"
+}, {
+    "name": "Payment Terms",
+    "type": "very_long_text"
+}, {
+    "name": "Special Requirements",
+    "type": "very_long_text"
+}, {
+    "name": "Support Level",
+    "type": "deal_stage"
+}, {
+    "name": "Lead Source",
+    "type": "deal_source"
+}, {
+    "name": "Last Contact Date",
+    "type": "date"
+}, {
+    "name": "Next Follow Up Date",
+    "type": "date"
+}, {
+    "name": "Customer Since",
+    "type": "year"
+}, {
+    "name": "Notes",
+    "type": "very_long_text"
+}, {
+    "name": "History",
+    "type": "very_long_text"
+}, {
+    "name": "Messages",
+    "type": "very_long_text"
+}, {
+    "name": "Implementation Instructions",
+    "type": "very_long_text"
+}]
