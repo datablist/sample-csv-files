@@ -308,3 +308,208 @@ ENTERPRISE_CUSTOMERS_SCHEMA: List[SchemaField] = [{
     "name": "Implementation Instructions",
     "type": "very_long_text"
 }]
+
+
+SUPPORT_TICKETS_SCHEMA: List[SchemaField] = [{
+    "name": "Ticket ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Customer Plan",
+    "type": "customer_plan"
+}, {
+    "name": "Ticket Subject",
+    "type": "support_ticket_subject"
+}, {
+    "name": "Ticket Text",
+    "type": "support_ticket_text"
+}, {
+    "name": "Priority Hint",
+    "type": "support_priority"
+}]
+
+CUSTOMER_REVIEWS_SCHEMA: List[SchemaField] = [{
+    "name": "Review ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Product Name",
+    "type": "product_name"
+}, {
+    "name": "Rating",
+    "type": "rating"
+}, {
+    "name": "Review Text",
+    "type": "review_text"
+}]
+
+MESSY_COMPANY_DATA_SCHEMA: List[SchemaField] = [{
+    "name": "Row ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Raw Company Name",
+    "type": "messy_company_name"
+}, {
+    "name": "Website",
+    "type": "website"
+}, {
+    "name": "Company Description",
+    "type": "long_text"
+}, {
+    "name": "Country",
+    "type": "country"
+}, {
+    "name": "Source System",
+    "type": "deal_source"
+}, {
+    "name": "Account Owner",
+    "type": "full_name"
+}, {
+    "name": "Created Date",
+    "type": "date"
+}, {
+    "name": "Last Activity Date",
+    "type": "date"
+}, {
+    "name": "Renewal Date",
+    "type": "date"
+}, {
+    "name": "Lifecycle Stage",
+    "type": "deal_stage"
+}, {
+    "name": "Employee Count",
+    "type": "company_number_employees"
+}, {
+    "name": "Annual Revenue",
+    "type": "positive_integer"
+}, {
+    "name": "Lead Score",
+    "type": "number"
+}, {
+    "name": "Open Opportunities",
+    "type": "number"
+}, {
+    "name": "CRM Notes",
+    "type": "long_text"
+}]
+
+PRODUCT_CATALOG_AI_SCHEMA: List[SchemaField] = [{
+    "name": "Product ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Product Title",
+    "type": "product_name"
+}, {
+    "name": "Raw Description",
+    "type": "long_text"
+}, {
+    "name": "Brand",
+    "type": "company"
+}, {
+    "name": "Category",
+    "type": "product_category"
+}, {
+    "name": "Target Language",
+    "type": "target_language"
+}]
+
+PRODUCT_TRANSLATION_AI_SCHEMA: List[SchemaField] = [{
+    "name": "Translation ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Product Name",
+    "type": "product_name"
+}, {
+    "name": "Category",
+    "type": "product_category"
+}, {
+    "name": "Source Language",
+    "type": "target_language"
+}, {
+    "name": "Target Language",
+    "type": "target_language"
+}, {
+    "name": "Product Description",
+    "type": "long_text"
+}, {
+    "name": "Feature Bullets",
+    "type": "long_text"
+}, {
+    "name": "SEO Title",
+    "type": "product_name"
+}, {
+    "name": "Translation Instructions",
+    "type": "long_text"
+}, {
+    "name": "Glossary Terms",
+    "type": "product_attributes"
+}, {
+    "name": "Do Not Translate",
+    "type": "long_text"
+}]
+
+LEAD_SCORING_AI_SCHEMA: List[SchemaField] = [{
+    "name": "Lead ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "First Name",
+    "type": "first_name"
+}, {
+    "name": "Last Name",
+    "type": "last_name"
+}, {
+    "name": "Job Title",
+    "type": "job"
+}, {
+    "name": "Company",
+    "type": "company"
+}, {
+    "name": "Website",
+    "type": "website"
+}, {
+    "name": "Industry",
+    "type": "industry"
+}, {
+    "name": "Company Notes",
+    "type": "long_text"
+}]
+
+WEB_PAGE_EXTRACTION_AI_SCHEMA: List[SchemaField] = [{
+    "name": "Page ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "URL",
+    "type": "website"
+}, {
+    "name": "Page Title",
+    "type": "page_title"
+}, {
+    "name": "Page Text",
+    "type": "very_long_text"
+}, {
+    "name": "Extraction Task",
+    "type": "long_text"
+}]
+
+RESEARCH_QUESTIONS_AI_SCHEMA: List[SchemaField] = [{
+    "name": "Research ID",
+    "type": "id",
+    "unique": True
+}, {
+    "name": "Entity Name",
+    "type": "company"
+}, {
+    "name": "Domain",
+    "type": "domain"
+}, {
+    "name": "Research Question",
+    "type": "research_question"
+}, {
+    "name": "Source URL",
+    "type": "website"
+}]
