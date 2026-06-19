@@ -161,3 +161,56 @@ pip install -r requirements.txt
 ```
 python src/main.py
 ```
+
+
+## AI Processing CSV Samples
+
+The generator also creates datasets for testing AI workflows on spreadsheet rows:
+
+- `support-tickets`: ticket classification, sentiment, and priority routing.
+- `customer-reviews`: sentiment analysis and topic classification.
+- `messy-company-data`: company name cleanup and industry classification.
+- `product-catalog-ai`: ecommerce classification, translation, and attribute extraction.
+- `product-translation-ai`: AI translation testing with realistic product names, product descriptions, feature bullets, glossary terms, and target languages.
+- `lead-scoring-ai`: ICP fit and lead scoring prompts.
+- `web-page-extraction-ai`: structured extraction from page text.
+- `research-questions-ai`: AI agent and web research prompt testing.
+
+AI datasets include synthetic `Expected ...` columns. Use them to compare prompt output with reference labels during testing.
+
+## Broken CSV Fixtures
+
+The `broken_csv` generator creates intentionally malformed CSV files for parser and repair-tool testing:
+
+- broken encodings (`Windows-1252`, `ISO-8859-1`)
+- mixed or wrong delimiters
+- unescaped and missing quotes
+- unquoted multiline fields
+- ragged rows
+- duplicate headers
+- mixed line endings
+
+When the repair is deterministic, a clean version is generated in `files/broken_csv/expected-fixed`.
+
+## Tests
+
+Create and activate a local virtual environment:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Run the test suite:
+
+```sh
+pytest
+```
+
+Generate all configured CSV files and upload manifests:
+
+```sh
+python src/main.py
+python src/broken_csv.py
+```
